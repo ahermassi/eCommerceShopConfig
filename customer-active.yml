@@ -2,6 +2,19 @@ spring:
   application:
     name: customer
 
+  datasource:
+    url: jdbc:mysql://localhost:3306/onlineRetail?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+
 server:
   port: 1111
 
@@ -10,20 +23,6 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/onlineRetail?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-
 
 #productms:
 #  all-products: http://productms/getAllProducts
